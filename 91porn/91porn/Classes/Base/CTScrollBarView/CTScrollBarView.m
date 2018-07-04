@@ -35,7 +35,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.bar.frame = CGRectMake(0, 0, self.width, 35);
+    self.bar.frame = CGRectMake(0, 0, self.width+20, 40);
     self.scrollView.frame = CGRectMake(0, CGRectGetMaxY(self.bar.frame), self.width, self.height - self.bar.height);
     self.scrollView.contentSize = CGSizeMake(self.scrollView.width * self.titleArray.count, self.scrollView.height);
     if (self.lazyLoad) {

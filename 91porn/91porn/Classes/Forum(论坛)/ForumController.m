@@ -21,13 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupUI];
+    
+    self.navigationItem.title = @"论坛";
+    [self setupScrollBarView];
 }
 
-- (void)setupUI {
-    self.navigationItem.title = @"论坛";
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
     [self setupChildViewControllers];
-    [self setupScrollBarView];
 }
 
 - (void)setupScrollBarView {

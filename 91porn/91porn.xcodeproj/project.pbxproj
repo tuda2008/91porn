@@ -133,6 +133,7 @@
 		9DF919EE20638881008A1299 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF9198520638880008A1299 /* SVProgressHUD.m */; };
 		9DF919EF20638881008A1299 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF9198720638880008A1299 /* SVRadialGradientLayer.m */; };
 		9DF919F620638881008A1299 /* ParseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF9199620638880008A1299 /* ParseTool.m */; };
+		CD23522120ECAD8A00C7DA92 /* XYString.m in Sources */ = {isa = PBXBuildFile; fileRef = CD23522020ECAD8A00C7DA92 /* XYString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -394,6 +395,9 @@
 		9DF9198720638880008A1299 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		9DF9199520638880008A1299 /* ParseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseTool.h; sourceTree = "<group>"; };
 		9DF9199620638880008A1299 /* ParseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseTool.m; sourceTree = "<group>"; };
+		CD23521F20ECAD6600C7DA92 /* XYString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYString.h; sourceTree = "<group>"; };
+		CD23522020ECAD8A00C7DA92 /* XYString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYString.m; sourceTree = "<group>"; };
+		CD23522320ECB08900C7DA92 /* ApiAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ApiAddress.h; path = 91porn/Classes/Config/ApiAddress.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -707,6 +711,7 @@
 		9DF918C320638880008A1299 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CD23522220ECAF9900C7DA92 /* Config */,
 				9D31C13A2067883500BFD371 /* Setting(设置) */,
 				9D31C166206A2C4600BFD371 /* Forum(论坛) */,
 				9D31C14220688BA500BFD371 /* Picture(图片) */,
@@ -1089,8 +1094,19 @@
 				9DF9199620638880008A1299 /* ParseTool.m */,
 				9D7413DA2064A0990015990A /* AddressHelper.h */,
 				9D7413DB2064A0990015990A /* AddressHelper.m */,
+				CD23521F20ECAD6600C7DA92 /* XYString.h */,
+				CD23522020ECAD8A00C7DA92 /* XYString.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		CD23522220ECAF9900C7DA92 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				CD23522320ECB08900C7DA92 /* ApiAddress.h */,
+			);
+			name = Config;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1142,6 +1158,7 @@
 				TargetAttributes = {
 					9DF91710206362DD008A1299 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = VSSUD3X46Q;
 					};
 					9DF91729206362DE008A1299 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1300,6 +1317,7 @@
 				9DF919BB20638880008A1299 /* NSArray+MASAdditions.m in Sources */,
 				9DF919CE20638880008A1299 /* MJRefreshBackStateFooter.m in Sources */,
 				9D7413DC2064A0990015990A /* AddressHelper.m in Sources */,
+				CD23522120ECAD8A00C7DA92 /* XYString.m in Sources */,
 				9DF9199720638880008A1299 /* AppDelegate.m in Sources */,
 				9DF919EC20638881008A1299 /* SVProgressAnimatedView.m in Sources */,
 				9DF919EA20638881008A1299 /* README.md in Sources */,
@@ -1428,12 +1446,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VSSUD3X46Q;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = 91porn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hahn.-1porn";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jam.91porn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1443,12 +1461,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VSSUD3X46Q;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = 91porn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hahn.-1porn";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jam.91porn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

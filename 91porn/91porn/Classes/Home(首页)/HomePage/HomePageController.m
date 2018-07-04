@@ -31,7 +31,13 @@ static NSString * const HomeCellID = @"HomeCell";
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setupUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
     [self setupRefresh];
 }
 
@@ -41,6 +47,7 @@ static NSString * const HomeCellID = @"HomeCell";
         [[ApiService shareInstance] requestIndex:^(NSMutableArray<PornItem *> *datas) {
             self.datas = datas;
             [self.tableView reloadData];
+            self.page = 1;
             [self.tableView.mj_header endRefreshing];
         } fail:^(NSString *msg) {
             [self.tableView.mj_header endRefreshing];

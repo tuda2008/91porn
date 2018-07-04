@@ -33,6 +33,11 @@ static ApiService *apiService = nil;
     [req setHTTPShouldHandleCookies:NO];
     [req setValue:nil forHTTPHeaderField:@"User-Agent"];
     [req setValue:@"zh-CN" forHTTPHeaderField:@"Accept-Language"];
+    [req setValue:VideoUrlWith(@"/index.php") forHTTPHeaderField:@"Referer"];
+    
+    NSString *randomIP = [AddressHelper getRandomIPAddress];
+    [req setValue:randomIP forHTTPHeaderField:@"X-Forwarded-For"];
+    
     // [req setValue:@"en" forHTTPHeaderField:@"Accept-Language"];
     // NSLog(@"%@", [req HTTPRequestHeaders]);
     
@@ -62,11 +67,6 @@ static ApiService *apiService = nil;
     AFHTTPSessionManager *manager = [self manager];
     manager.requestSerializer.timeoutInterval = 5;
     
-    AFHTTPRequestSerializer *req = manager.requestSerializer;
-    NSString *randomIP = [AddressHelper getRandomIPAddress];
-    [req setValue:randomIP forHTTPHeaderField:@"X-Forwarded-For"];
-    [req setValue:VideoUrlWith(@"/index.php") forHTTPHeaderField:@"Referer"];
-    
     NSDictionary *params = @{@"viewkey" : viewkey};
     
     [manager GET:VideoUrlWith(@"/view_video.php") parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
@@ -86,7 +86,6 @@ static ApiService *apiService = nil;
     AFHTTPRequestSerializer *req = manager.requestSerializer;
     //FIXME:该请求的返回的中文页面无法转化，待解决
     [req setValue:@"en" forHTTPHeaderField:@"Accept-Language"];
-    [req setValue:VideoUrlWith(@"/index.php") forHTTPHeaderField:@"Referer"];
     
     NSDictionary *params = @{
                              @"next" : @"watch",
@@ -115,9 +114,7 @@ static ApiService *apiService = nil;
 - (void)requestCategory:(NSString *)category page:(NSInteger)page success:(void (^)(NSMutableArray<PornItem *> *))success fail:(void (^)(NSString *))fail {
     AFHTTPSessionManager *manager = [self manager];
     
-    AFHTTPRequestSerializer *req = manager.requestSerializer;    [req setHTTPShouldHandleCookies:NO];
-    [req setValue:nil forHTTPHeaderField:@"User-Agent"];
-    [req setValue:VideoUrlWith(@"/index.php") forHTTPHeaderField:@"Referer"];
+    AFHTTPRequestSerializer *req = manager.requestSerializer;
     //FIXME:该请求的返回的中文页面无法转化，待解决
     [req setValue:@"en" forHTTPHeaderField:@"Accept-Language"];
     

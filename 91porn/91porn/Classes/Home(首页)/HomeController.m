@@ -20,13 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupUI];
+    
+    self.navigationItem.title = @"视频";
+    [self setupScrollBarView];
 }
 
-- (void)setupUI {
-    self.navigationItem.title = @"视频";
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
     [self setupChildViewControllers];
-    [self setupScrollBarView];
 }
 
 - (void)setupScrollBarView {

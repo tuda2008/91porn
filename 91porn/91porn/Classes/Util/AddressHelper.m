@@ -7,14 +7,22 @@
 //
 
 #import "AddressHelper.h"
+#import "XYString.h"
+#import "ApiAddress.h"
 
 NSString * VideoUrlWith(NSString *path) {
     NSString *domain = [AddressHelper getVideoAddress];
+    if ([XYString isBlankString:domain]) {
+        [AddressHelper saveVideoAddress:[NSString stringWithFormat:@"%@", m91PornVideoPage]];
+    }
     return [NSString stringWithFormat:@"%@%@", domain, path];
 }
 
 NSString * ForumUrlWith(NSString *path) {
     NSString *domain = [AddressHelper getForumAddress];
+    if ([XYString isBlankString:domain]) {
+        [AddressHelper saveForumAddress:[NSString stringWithFormat:@"%@", m91PornForumPage]];
+    }
     return [NSString stringWithFormat:@"%@%@", domain, path];
 }
 
@@ -64,7 +72,7 @@ NSString * ForumUrlWith(NSString *path) {
 + (NSString *)getForumAddress {
     NSString *url = [[NSUserDefaults standardUserDefaults] objectForKey:@"forumAddress"];
     if (url == nil) url = @"";
-    return url;
+    return url? url : @"";
 }
 
 + (NSString *)getRandomIPAddress {
